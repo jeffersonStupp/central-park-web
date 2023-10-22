@@ -1,0 +1,38 @@
+<!-- <div class="container fluid"> -->
+<div class="containercustom">
+  <div class="centralizartexto">
+    <h3>Veiculos Finalizados</h3>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Placa</th>
+        <th scope="col">Entrada</th>
+        <th scope="col">Saída</th>
+        <th scope="col">Valor</th> <th></th>
+        <th></th>
+
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of listafinalizados">
+        <td>{{ c.placa }}</td>
+        <td>{{ c.horaEntrada | dateTimeFormat }}</td>
+        <td>{{ c.horaSaida | dateTimeFormat }}</td>
+        <td>{{ c.valor | moneyFormat }}</td>
+
+
+        <td>
+          <!-- <a class="btn btn-danger" (click)="this.confirmarExcluir(c.id)" -->
+          <a class="btn btn-danger" (click)="this.confirmarExcluir(c.id)"
+          >Excluir</a
+          >
+        </td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,20 @@
+.label-obrigatorio::after {
+  content: " *";}
+
+ *{font-family:'Cambria, Cochin, Georgia, Times, 'Times New Roman', serif'}
+
+ .containercustom{
+  width: 90vw;
+  margin: auto;
+}
+.toast-top-left{
+  margin-left: 90px;
+
+}
+
+
+
+
+
+
+

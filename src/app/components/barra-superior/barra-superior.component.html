@@ -1,0 +1,64 @@
+<div class="toolbar" role="banner">
+  <img
+    width="150"
+    alt="Angular Logo"
+    src="\assets\symbol.png"
+    [routerLink]="['principal']"
+  />
+  <a
+    [routerLink]="['/veiculos/entrada']"
+    queryParamsHandling="preserve"
+    style="color: rgb(0, 0, 0); margin-right: 15px"
+    >Entrada de veículos</a
+  >
+  <a
+    [routerLink]="['/pessoa/listagem']"
+    queryParamsHandling="preserve"
+    style="color: rgb(0, 0, 0); margin-right: 15px"
+    >Listagem de pessoas</a
+  >
+  <a
+    [routerLink]="['/pessoa/listagem-endereco']"
+    queryParamsHandling="preserve"
+    style="color: rgb(0, 0, 0); margin-right: 15px"
+    >Listagem de endereços</a
+  >
+  <a
+  [routerLink]="['/pessoa/cadastro']"
+  queryParamsHandling="preserve"
+  *ngIf="tipoPerfilEhAdmin"
+  style="color: rgb(0, 0, 0); margin-right: 15px"
+  >Cadastro</a
+  >
+  <a
+    [routerLink]="['/usuario/config']"
+    queryParamsHandling="preserve"
+    *ngIf="tipoPerfilEhAdmin"
+    style="color: rgb(0, 0, 0); margin-right: 15px"
+    >Configuração</a
+  >
+
+  <div class="spacer">
+    <div class="abalogado">
+      <p>{{ saudacao }} {{ nomeusuario }}</p>
+    </div>
+    <a
+      [routerLink]="[]"
+      queryParamsHandling="preserve"
+      style="color: rgb(0, 0, 0); margin-right: 15px"
+      (click)="this.logout()"
+      >Logout</a
+    >
+    <a
+      [routerLink]="[]"
+      queryParamsHandling="preserve"
+      *ngIf="tipoPerfilEhAdmin"
+      style="color: rgb(0, 0, 0); margin-right: 15px"
+      (click)="this.editarPerfilUsuario()"
+      >Editar perfil</a
+    >
+  </div>
+</div>
+<div style="margin-top: 100px">
+  <router-outlet></router-outlet>
+</div>

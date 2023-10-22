@@ -1,0 +1,104 @@
+<div class="container">
+  <h2 class="centralizar-texto">Gestão do Estacionamento</h2>
+
+  <form
+    [formGroup]="this.formulario"
+    (ngSubmit)="this.submeterForm()"
+    novalidate
+    [ngClass]="{ submitted: this.formSubmetido }"
+  >
+    <div class="row">
+      <div class="form-group col-sm-12 col-md-12 col-lg-6">
+        <label class="form-control-label label-obrigatorio"
+          >Data de inicio da tarifa</label
+        >
+        <input
+          type="date"
+          class="form-control"
+          formControlName="dataDeInicio"
+          [value]="this.formulario.get('dataDeInicio').value | dateFormat"
+        />
+        <app-validator
+          [formSubmitted]="this.formSubmetido"
+          [errors]="this.formulario?.get('dataDeInicio')?.errors"
+        ></app-validator>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-12 col-lg-6">
+        <label class="form-control-label label-obrigatorio"
+          >Data do fim da tarifa</label
+        >
+        <input
+          type="date"
+          class="form-control"
+          formControlName="dataDeFim"
+          [value]="this.formulario.get('dataDeFim').value | dateFormat"
+        />
+        <app-validator
+          [formSubmitted]="this.formSubmetido"
+          [errors]="this.formulario?.get('dataDeFim')?.errors"
+        ></app-validator>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-12 col-lg-6">
+        <label class="form-control-label label-obrigatorio"
+          >Valor da tarifa</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          formControlName="valorTarifa"
+          [value]="this.formulario.get('valorTarifa').value | moneyFormat"
+        />
+        <app-validator
+          [formSubmitted]="this.formSubmetido"
+          [errors]="this.formulario?.get('valorTarifa')?.errors"
+        ></app-validator>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-12 col-lg-6">
+        <label class="form-control-label label-obrigatorio"
+          >Valor da adicional</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          formControlName="valorAdicional"
+          [value]="this.formulario.get('valorAdicional').value | moneyFormat"
+        />
+        <app-validator
+          [formSubmitted]="this.formSubmetido"
+          [errors]="this.formulario?.get('valorAdicional')?.errors"
+        ></app-validator>
+      </div>
+
+      <div class="form-group col-sm-12 col-md-12 col-lg-6">
+        <label class="form-control-label label-obrigatorio"
+          >Quantidade de vagas</label
+        >
+        <input
+          type="number"
+          class="form-control"
+          formControlName="quantidadeDeVagas"
+        />
+        <app-validator
+          [formSubmitted]="this.formSubmetido"
+          [errors]="this.formulario?.get('quantidadeDeVagas')?.errors"
+        ></app-validator>
+      </div>
+
+      <div class="form-group col-sm-12 action-buttons">
+        <a
+          class="btn btn-secondary float-left"
+          queryParamsHandling="preserve"
+          (click)="voltar('Operação cancelada')"
+          [routerLink]="['/veiculos/entrada']"
+          >Voltar</a
+        >
+        <button type="submit" class="btn btn-primary float-right">
+          Salvar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

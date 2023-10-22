@@ -1,0 +1,17 @@
+.card-body{
+  background-color: #f3e9e9;
+  box-shadow: -1px 3px 8px   rgb(73, 75, 75);
+}
+.img{
+  text-align: center;
+}
+.fundo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url('src\assets\fundo.jpg');
+  background-size: cover;
+
+}
+
